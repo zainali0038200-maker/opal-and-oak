@@ -230,7 +230,7 @@ body{background:#080807;color:#f4eee6}
   </div>
   <div class="heroFrame">
     <div class="heroGlow"></div>
-    <img src="https://images.pexels.com/photos/11301745/pexels-photo-11301745.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Pakistani luxury fashion">
+    <img src="https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Pakistani luxury fashion">
     <div class="frameEdge"></div>
     <div class="verticalLabel">OPAL &amp; OAK&nbsp;&nbsp; / &nbsp;&nbsp;HIJAB & SCARF LUXURY</div>
     
@@ -254,15 +254,15 @@ body{background:#080807;color:#f4eee6}
 <div class="head"><div><div class="eyebrow">THE HIJAB & SCARF EDIT</div><h2>New Hijab & Scarf Arrivals</h2></div></div>
 <div id="productGrid" class="productGrid"><div class="empty">Loading your real products…</div></div>
 <div id="fallbackArrivals" class="fallbackArrivals" style="display:none">
-  <article class="fallbackArrival"><img src="https://images.pexels.com/photos/11301745/pexels-photo-11301745.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Premium black hijab"><div class="faInfo"><div class="faName">Noir Signature Hijab</div><div class="faMeta">PREMIUM HIJAB · CA$39</div></div></article>
-  <article class="fallbackArrival"><img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Chiffon scarf"><div class="faInfo"><div class="faName">Ivory Chiffon Scarf</div><div class="faMeta">CHIFFON · CA$32</div></div></article>
-  <article class="fallbackArrival"><img src="https://images.pexels.com/photos/7691160/pexels-photo-7691160.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Silk scarf"><div class="faInfo"><div class="faName">Mauve Silk Scarf</div><div class="faMeta">SILK · CA$49</div></div></article>
-  <article class="fallbackArrival"><img src="https://images.pexels.com/photos/7691140/pexels-photo-7691140.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Satin hijab"><div class="faInfo"><div class="faName">Champagne Satin Hijab</div><div class="faMeta">SATIN · CA$42</div></div></article>
+  <article class="fallbackArrival"><img src="https://images.pexels.com/photos/6347544/pexels-photo-6347544.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Premium black hijab"><div class="faInfo"><div class="faName">Noir Signature Hijab</div><div class="faMeta">PREMIUM HIJAB · CA$39</div></div></article>
+  <article class="fallbackArrival"><img src="https://images.pexels.com/photos/6347537/pexels-photo-6347537.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Chiffon scarf"><div class="faInfo"><div class="faName">Ivory Chiffon Scarf</div><div class="faMeta">CHIFFON · CA$32</div></div></article>
+  <article class="fallbackArrival"><img src="https://images.pexels.com/photos/6347547/pexels-photo-6347547.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Silk scarf"><div class="faInfo"><div class="faName">Mauve Silk Scarf</div><div class="faMeta">SILK · CA$49</div></div></article>
+  <article class="fallbackArrival"><img src="https://images.pexels.com/photos/6347540/pexels-photo-6347540.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Satin hijab"><div class="faInfo"><div class="faName">Champagne Satin Hijab</div><div class="faMeta">SATIN · CA$42</div></div></article>
 </div></div>
 </section>
 
 <section class="section story" id="story">
-<img src="https://images.pexels.com/photos/7691160/pexels-photo-7691160.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Opal & Oak women's fashion">
+<img src="https://images.pexels.com/photos/6347541/pexels-photo-6347541.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Opal & Oak women's fashion">
 <div><div class="eyebrow">OUR CRAFT</div><h2>Made for modest elegance.</h2><p>Opal &amp; Oak brings Pakistani craftsmanship to a modern Canadian wardrobe — from embroidered shalwar kameez and lawn to occasion-ready formal wear. Every piece is selected for its detail, comfort and timeless character.</p><a class="btn" href="#social">Discover The Edit</a></div>
 </section>
 
@@ -356,7 +356,7 @@ async function loadProducts(){
  if(error){grid.innerHTML='<div class="empty">Could not load products. Check Supabase table permissions.</div>';return}
  products=(data||[]).filter(p=>p.active!==false && p.is_active!==false);
  if(!products.length){grid.innerHTML='';const f=document.getElementById("fallbackArrivals");if(f)f.style.display="grid";return}
- grid.innerHTML=products.map(p=>`<article class="productCard"><img src="https://images.pexels.com/photos/7691140/pexels-photo-7691140.jpeg?auto=compress&cs=tinysrgb&w=1200"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Hijabs")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
+ grid.innerHTML=products.map(p=>`<article class="productCard"><img src="https://images.pexels.com/photos/6347543/pexels-photo-6347543.jpeg?auto=compress&cs=tinysrgb&w=1200"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Hijabs")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
 }
 async function adminLogin(){
  const {error}=await sb.auth.signInWithPassword({email:aEmail.value,password:aPassword.value});
