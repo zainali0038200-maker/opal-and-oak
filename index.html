@@ -255,15 +255,15 @@ body{background:#080807;color:#f4eee6}
 <div id="productGrid" class="productGrid"><div class="empty">Loading your real products…</div></div>
 <div id="fallbackArrivals" class="fallbackArrivals" style="display:none">
   <article class="fallbackArrival">
-    <img src="https://images.pexels.com/photos/20777170/pexels-photo-20777170.jpeg?cs=srgb&dl=pexels-dhanno-20777170.jpg&fm=jpg" alt="Embroidered Pakistani 3-piece suit">
+    <img src="https://images.pexels.com/photos/31874441/pexels-photo-31874441.jpeg?cs=srgb&dl=pexels-dhanno-31874441.jpg&fm=jpg" alt="Embroidered Pakistani 3-piece suit">
     <div class="faInfo"><div class="faName">Ivory Embroidered 3-Piece</div><div class="faMeta">3-PIECE SUIT · CA$189</div></div>
   </article>
   <article class="fallbackArrival">
-    <img src="https://images.pexels.com/photos/31874455/pexels-photo-31874455.jpeg?cs=srgb&dl=pexels-dhanno-31874455.jpg&fm=jpg" alt="Pakistani lawn outfit">
+    <img src="https://images.pexels.com/photos/31874446/pexels-photo-31874446.jpeg?cs=srgb&dl=pexels-dhanno-31874446.jpg&fm=jpg" alt="Pakistani lawn outfit">
     <div class="faInfo"><div class="faName">Midnight Lawn Ensemble</div><div class="faMeta">LAWN &amp; PRET · CA$149</div></div>
   </article>
   <article class="fallbackArrival">
-    <img src="https://images.pexels.com/photos/31874434/pexels-photo-31874434.jpeg?cs=srgb&dl=pexels-dhanno-31874434.jpg&fm=jpg" alt="Pakistani formal outfit">
+    <img src="https://images.pexels.com/photos/31874439/pexels-photo-31874439.jpeg?cs=srgb&dl=pexels-dhanno-31874439.jpg&fm=jpg" alt="Pakistani formal outfit">
     <div class="faInfo"><div class="faName">Noor Formal Edit</div><div class="faMeta">FORMAL / FESTIVE · CA$229</div></div>
   </article>
   <article class="fallbackArrival">
@@ -277,14 +277,14 @@ body{background:#080807;color:#f4eee6}
 <section class="section" id="collection">
 <div class="head"><div><div class="eyebrow">SHOP BY EDIT</div><h2>Pakistani Wear</h2></div></div>
 <div class="tiles">
-<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31323178/pexels-photo-31323178.jpeg?cs=srgb&dl=pexels-dhanno-31323178.jpg&fm=jpg"><small>01 / 3-PIECE</small><b>3-Piece Suits</b></a>
-<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31874448/pexels-photo-31874448.jpeg?cs=srgb&dl=pexels-dhanno-31874448.jpg&fm=jpg"><small>02 / LAWN &amp; PRET</small><b>Lawn &amp; Pret</b></a>
-<a class="tile" href="#new"><img src="https://images.pexels.com/photos/20777170/pexels-photo-20777170.jpeg?cs=srgb&dl=pexels-dhanno-20777170.jpg&fm=jpg"><small>03 / FORMAL</small><b>Formal &amp; Festive</b></a>
+<a class="tile" href="#new"><img src="https://images.pexels.com/photos/20777170/pexels-photo-20777170.jpeg?cs=srgb&dl=pexels-dhanno-20777170.jpg&fm=jpg"><small>01 / 3-PIECE</small><b>3-Piece Suits</b></a>
+<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31874434/pexels-photo-31874434.jpeg?cs=srgb&dl=pexels-dhanno-31874434.jpg&fm=jpg"><small>02 / LAWN &amp; PRET</small><b>Lawn &amp; Pret</b></a>
+<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31323178/pexels-photo-31323178.jpeg?cs=srgb&dl=pexels-dhanno-31323178.jpg&fm=jpg"><small>03 / FORMAL</small><b>Formal &amp; Festive</b></a>
 </div>
 </section>
 
 <section class="section story" id="story">
-<img src="https://images.pexels.com/photos/31874455/pexels-photo-31874455.jpeg?cs=srgb&dl=pexels-dhanno-31874455.jpg&fm=jpg" alt="Opal & Oak women's fashion">
+<img src="https://images.pexels.com/photos/31874448/pexels-photo-31874448.jpeg?cs=srgb&dl=pexels-dhanno-31874448.jpg&fm=jpg" alt="Opal & Oak women's fashion">
 <div><div class="eyebrow">OUR CRAFT</div><h2>Rooted in tradition.</h2><p>Opal &amp; Oak brings Pakistani craftsmanship to a modern Canadian wardrobe — from embroidered shalwar kameez and lawn to occasion-ready formal wear. Every piece is selected for its detail, comfort and timeless character.</p><a class="btn" href="#social">Discover The Collection</a></div>
 </section>
 
@@ -378,7 +378,7 @@ async function loadProducts(){
  if(error){grid.innerHTML='<div class="empty">Could not load products. Check Supabase table permissions.</div>';return}
  products=(data||[]).filter(p=>p.active!==false && p.is_active!==false);
  if(!products.length){grid.innerHTML='';const f=document.getElementById("fallbackArrivals");if(f)f.style.display="grid";return}
- grid.innerHTML=products.map(p=>`<article class="productCard"><img src="https://images.pexels.com/photos/31874434/pexels-photo-31874434.jpeg?cs=srgb&dl=pexels-dhanno-31874434.jpg&fm=jpg"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Pakistani Dresses")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
+ grid.innerHTML=products.map(p=>`<article class="productCard"><img src="https://images.pexels.com/photos/31874441/pexels-photo-31874441.jpeg?cs=srgb&dl=pexels-dhanno-31874441.jpg&fm=jpg"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Pakistani Dresses")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
 }
 async function adminLogin(){
  const {error}=await sb.auth.signInWithPassword({email:aEmail.value,password:aPassword.value});
