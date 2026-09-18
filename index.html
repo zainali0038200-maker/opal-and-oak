@@ -219,7 +219,7 @@ body{background:#080807;color:#f4eee6}
   </div>
   <div class="heroFrame">
     <div class="heroGlow"></div>
-    <img src="pakistani-hero.jpg" alt="Pakistani luxury fashion">
+    <img src="https://www.nameerabyfarooq.com/cdn/shop/products/TraditionalBluePishwasLehenga_1800x1800.jpg?v=1671277986" alt="Pakistani luxury fashion">
     <div class="frameEdge"></div>
     <div class="verticalLabel">OPAL &amp; OAK&nbsp;&nbsp; / &nbsp;&nbsp;PAKISTANI LUXURY</div>
     <div class="heroStamp">OO<br><small>EST. 2026</small></div>
@@ -247,14 +247,14 @@ body{background:#080807;color:#f4eee6}
 <section class="section" id="collection">
 <div class="head"><div><div class="eyebrow">SHOP BY EDIT</div><h2>Pakistani Wear</h2></div></div>
 <div class="tiles">
-<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31874438/pexels-photo-31874438.jpeg?cs=srgb&dl=pexels-dhanno-31874438.jpg&fm=jpg"><small>01 / 3-PIECE</small><b>3-Piece Suits</b></a>
-<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31874451/pexels-photo-31874451.jpeg?cs=srgb&dl=pexels-dhanno-31874451.jpg&fm=jpg"><small>02 / LAWN &amp; PRET</small><b>Lawn &amp; Pret</b></a>
-<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31874429/pexels-photo-31874429.jpeg?cs=srgb&dl=pexels-dhanno-31874429.jpg&fm=jpg"><small>03 / FORMAL</small><b>Formal &amp; Festive</b></a>
+<a class="tile" href="#new"><img src="https://www.designerdhaage.com/cdn/shop/files/BinTayyabPakistaniLawnSuitBIT02_1.jpg?v=1755892304"><small>01 / 3-PIECE</small><b>3-Piece Suits</b></a>
+<a class="tile" href="#new"><img src="https://houseofayeza.co.uk/cdn/shop/files/s241-005b-3cp.jpg?v=1730718631&width=600"><small>02 / LAWN &amp; PRET</small><b>Lawn &amp; Pret</b></a>
+<a class="tile" href="#new"><img src="https://uycollection.com/cdn/shop/files/1_ccb80978-243f-4a50-93ec-d89edee418a6.jpg?v=1714133067"><small>03 / FORMAL</small><b>Formal &amp; Festive</b></a>
 </div>
 </section>
 
 <section class="section story" id="story">
-<img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1100&q=90" alt="Opal & Oak women's fashion">
+<img src="https://saraclothes.com/cdn/shop/products/LF21-08-01_900x_eadd91bb-0c92-45cc-b508-c85c3a7b0955.jpg?v=1639766185" alt="Opal & Oak women's fashion">
 <div><div class="eyebrow">OUR CRAFT</div><h2>Rooted in tradition.</h2><p>Opal &amp; Oak brings Pakistani craftsmanship to a modern Canadian wardrobe — from embroidered shalwar kameez and lawn to occasion-ready formal wear. Every piece is selected for its detail, comfort and timeless character.</p><a class="btn" href="#social">Discover The Collection</a></div>
 </section>
 
@@ -308,14 +308,8 @@ tilt(document.getElementById('brand3d'),document.getElementById('plate'));
 <div class="drawer" id="cartDrawer"><div class="panel">
 <button class="close" onclick="closePanel('cartDrawer')">CLOSE</button><h2>Your Bag</h2><div id="cartLines"></div><div class="cartTotal" id="cartTotal">CA$0.00</div>
 <div class="checkout"><div class="eyebrow">CHECKOUT</div><div class="form">
-<label>Name<input id="cName" required></label><label>Email<input id="cEmail" type="email" required></label><label>Phone<input id="cPhone"></label><label>Address<textarea id="cAddress" rows="3" required></textarea></label><label>City<input id="cCity"></label><label>Province<input id="cProvince"></label><label>Postal Code<input id="cPostal"></label><label>Payment Method
-   <select id="paymentMethod">
-     <option value="COD">Cash on Delivery</option>
-     <option value="ONLINE">Credit / Debit Card — Online Payment</option>
-   </select>
- </label>
-
-<button class="btn main" onclick="placeOrder()">Continue to Payment</button></div><div id="orderMsg" class="notice"></div></div>
+<label>Name<input id="cName" required></label><label>Email<input id="cEmail" type="email" required></label><label>Phone<input id="cPhone"></label><label>Address<textarea id="cAddress" rows="3" required></textarea></label><label>City<input id="cCity"></label><label>Province<input id="cProvince"></label><label>Postal Code<input id="cPostal"></label>
+<button class="btn main" onclick="placeOrder()">Place Order — COD</button></div><div id="orderMsg" class="notice"></div></div>
 </div></div>
 
 <div class="drawer" id="adminDrawer"><div class="panel">
@@ -378,7 +372,7 @@ async function setStatus(id,status){await sb.from("orders").update({status}).eq(
 async function placeOrder(){
  if(!cart.length){orderMsg.textContent="Your bag is empty.";return}
  const total=cart.reduce((a,x)=>a+x.price*x.qty,0);
- const order={customer_name:cName.value.trim(),email:cEmail.value.trim(),phone:cPhone.value.trim(),address:cAddress.value.trim(),city:cCity.value.trim(),province:cProvince.value.trim(),postal_code:cPostal.value.trim(),country:"Canada",total,currency:"CAD",payment_method:document.getElementById("paymentMethod").value,status:"Pending"};
+ const order={customer_name:cName.value.trim(),email:cEmail.value.trim(),phone:cPhone.value.trim(),address:cAddress.value.trim(),city:cCity.value.trim(),province:cProvince.value.trim(),postal_code:cPostal.value.trim(),country:"Canada",total,currency:"CAD",payment_method:"COD",status:"Pending"};
  if(!order.customer_name||!order.email||!order.address){orderMsg.textContent="Please complete name, email and address.";return}
  const {data,error}=await sb.from("orders").insert(order).select().single();
  if(error){orderMsg.textContent=error.message;return}
