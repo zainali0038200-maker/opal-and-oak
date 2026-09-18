@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OPAL & OAK — Women's Luxury</title>
+<title>OPAL & OAK — Pakistani Wear's Luxury</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080808;color:#f1ebe2;font-family:Arial,sans-serif}
 a{text-decoration:none;color:inherit}.ship{height:42px;border-bottom:1px solid #292622;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:3px;color:#ddd4c8;text-align:center}
@@ -35,54 +35,231 @@ footer{border-top:1px solid #292622;padding:40px 5vw;color:#716b64;font-size:9px
 .followBtns{display:flex;gap:12px}.followBtns a{border:1px solid #302c28;border-radius:30px;padding:15px 22px;font-size:12px;letter-spacing:1px;color:#aaa39a}
 .copyright{color:#68635d;font-size:10px;letter-spacing:2px;grid-column:1/2;margin-top:20px}.newFooter .manage{grid-column:2/3;justify-self:end;align-self:start;margin:0}
 @media(max-width:700px){.newsletter{padding:55px 20px 90px}.newsletterCard{min-height:455px;padding:42px 30px}.newsletterTitle{font-size:58px}.newsletterCard p{margin-bottom:58px}.emailRow{font-size:16px}.newFooter{padding:55px 22px 35px;grid-template-columns:1fr;gap:45px}.footerCols{gap:25px}.follow{grid-column:auto}.copyright{grid-column:auto}.newFooter .manage{grid-column:auto;justify-self:start}}
+
+/* EXACT REFERENCE-STYLE OVERRIDE */
+body{background:#090908;color:#f5efe7}
+.ship{height:40px;background:#090908;color:#d9d0c6;border-color:#26231f}
+.nav{height:72px;padding:0 4.6vw;background:rgba(9,9,8,.96);border-color:#292622}
+.logo{font-size:29px;letter-spacing:4px}
+.navlinks{gap:29px;font-size:10px}
+.actions{gap:8px}.actions .pill{padding:11px 16px}
+.hero{width:100%;max-width:none;height:520px;min-height:520px;padding:0 6vw;grid-template-columns:44% 56%;gap:0;position:relative;overflow:hidden;background:#0a0908}
+.hero>div:first-child{z-index:5;padding-top:68px}
+.hero:before{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(90deg,#090807 0%,#090807e8 25%,#09080788 48%,transparent 72%)}
+.heroVisual{position:absolute;right:0;top:0;width:67%;height:520px;z-index:2;display:block}
+.visualCard{width:100%;height:100%;box-shadow:none;transform:none!important;overflow:hidden}
+.visualCard:before,.visualCard:after{display:none}
+.visualCard img{width:100%;height:100%;object-fit:cover;animation:heroZoom 12s ease-in-out infinite alternate}
+@keyframes heroZoom{0%{transform:scale(1.01)}100%{transform:scale(1.055) translate3d(-5px,-3px,0)}}
+.visualCard:after{content:"";display:block;position:absolute;inset:0;background:linear-gradient(90deg,#090807c9 0%,transparent 42%,#09080716 100%);z-index:3}
+.kicker{font-size:10px;letter-spacing:4px;color:#c8b39a}
+.hero h1{font-size:clamp(54px,5.1vw,82px);line-height:.9;margin:20px 0 22px;letter-spacing:-1px}
+.hero p{font:17px/1.5 Arial,sans-serif;color:#ded6cd;max-width:420px}
+.buttons{margin-top:28px}.btn.main{background:transparent;color:#f4eee6;border-color:#d8cfc5;min-width:215px}
+.heroFeatures{display:flex;gap:34px;margin-top:53px;font-size:8px;letter-spacing:2px;line-height:1.7;color:#e5ddd4}
+.scriptTag{position:absolute;right:5%;top:31%;z-index:8;color:#f5ede3;font:italic 43px/1.03 Georgia,serif;text-align:center;transform:rotate(-7deg);text-shadow:0 3px 18px #000}
+.scriptTag small{display:block;font-size:17px;margin-top:12px}
+.visualTag{position:absolute;right:5%;bottom:26px;z-index:8;background:none;color:#eee5dc;padding:0;text-align:center;letter-spacing:4px;line-height:1.8}
+.marquee{display:none}
+.section{max-width:none;padding:66px 5.1vw}
+.head{margin-bottom:27px}.head h2{font-size:47px}
+.viewAll{font-size:9px;letter-spacing:3px}
+.productGrid{grid-template-columns:repeat(4,1fr);gap:22px}
+.productCard{background:transparent;border:0}
+.productCard img{height:300px;filter:saturate(.76);transition:transform .5s ease}
+.productCard:hover img{transform:scale(1.025)}
+.productInfo{padding:14px 0}.productName{font-size:18px}
+.productMeta{font-size:12px}.productAdd{background:transparent;color:#f1e9e0;border:1px solid #686058;padding:12px}
+.tiles{gap:14px}.tile{height:390px}
+.story{padding-top:75px}
+.brandSection{padding-top:0}
+.newsletter{padding-top:60px}
+@media(max-width:850px){
+.hero{height:690px;min-height:690px;display:block;padding:0 22px}
+.hero>div:first-child{padding-top:55px}
+.heroVisual{width:100%;height:690px}
+.hero:before{background:linear-gradient(180deg,#090807e8 0%,#0908078c 48%,#090807ee 100%)}
+.heroFeatures{margin-top:38px;gap:18px}
+.productGrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+.productGrid{grid-template-columns:1fr}.productCard img{height:390px}
+.hero h1{font-size:52px}.scriptTag{font-size:34px}
+}
+
+
+/* OPAL & OAK — COUTURE LUXURY SYSTEM */
+:root{
+  --ink:#070706;--ink2:#0d0c0a;--cream:#f4eee5;--muted:#a59d93;
+  --gold:#b79a70;--line:rgba(238,228,215,.16);--line2:rgba(183,154,112,.34)
+}
+html{background:var(--ink)}
+body{background:
+ radial-gradient(900px 500px at 82% 12%,rgba(129,96,55,.13),transparent 65%),
+ radial-gradient(700px 420px at 8% 70%,rgba(109,82,48,.08),transparent 70%),
+ var(--ink);color:var(--cream);letter-spacing:.1px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+.ship{height:34px;border:0;border-bottom:1px solid var(--line);font-size:8px;letter-spacing:3.2px;color:#cfc4b8;background:#060605}
+.nav{height:86px;padding:0 4.2vw;background:rgba(7,7,6,.72);border-bottom:1px solid var(--line);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.logo{font:400 27px/1 Georgia,serif;letter-spacing:5.5px;color:#f1e8de}
+.navlinks{gap:34px;font-size:9px;letter-spacing:2.8px}.navlinks a{color:#d5ccc1;transition:.3s}.navlinks a:hover{color:#fff}
+.actions{gap:8px}.actions .pill,.iconBtn{border-color:var(--line2);background:rgba(255,255,255,.025)}
+.hero{height:min(760px,calc(100vh - 120px));min-height:680px;padding:0 5.2vw;display:grid;grid-template-columns:44% 56%;max-width:none;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero>div:first-child{align-self:center;padding:0;position:relative;z-index:8;margin-top:-10px}
+.hero:before{content:"";position:absolute;inset:0;z-index:4;background:
+ linear-gradient(90deg,#070706 0%,rgba(7,7,6,.97) 17%,rgba(7,7,6,.78) 40%,rgba(7,7,6,.10) 73%,transparent 100%),
+ linear-gradient(0deg,rgba(7,7,6,.52),transparent 30%,rgba(7,7,6,.12))}
+.hero:after{content:"";position:absolute;left:5.2vw;bottom:34px;width:130px;height:1px;background:var(--gold);z-index:9;box-shadow:210px 0 0 var(--line2)}
+.heroVisual{position:absolute;right:0;top:0;width:70%;height:100%;z-index:2}
+.visualCard{width:100%;height:100%;border-radius:0;box-shadow:none;overflow:hidden}
+.visualCard img{width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.04) saturate(.76) sepia(.05);animation:coutureZoom 14s ease-in-out infinite alternate}
+@keyframes coutureZoom{0%{transform:scale(1.015) translate3d(0,0,0)}100%{transform:scale(1.065) translate3d(-7px,-4px,0)}}
+.visualCard:after{content:"";display:block;position:absolute;inset:0;background:linear-gradient(90deg,#070706 0%,transparent 34%,rgba(7,7,6,.05) 70%,rgba(7,7,6,.28) 100%),linear-gradient(0deg,rgba(7,7,6,.62),transparent 30%,rgba(7,7,6,.05) 65%,rgba(7,7,6,.28));z-index:3}
+.kicker{font-size:9px;letter-spacing:5px;color:#cbb18e;margin-bottom:24px}
+.hero h1{font:400 clamp(60px,6.2vw,100px)/.86 Georgia,serif;letter-spacing:-2.5px;margin:0 0 28px;max-width:720px;text-shadow:0 12px 35px rgba(0,0,0,.45)}
+.hero p{font:400 17px/1.65 Georgia,serif;color:#c5bdb4;max-width:470px;margin:0}
+.buttons{margin-top:36px}.btn{border-color:#756958;padding:16px 23px;transition:.35s;background:rgba(255,255,255,.015)}.btn.main{background:#eee7dc;color:#111;border-color:#eee7dc;box-shadow:0 10px 35px rgba(0,0,0,.22)}.btn:hover{transform:translateY(-2px);border-color:#d2b98f}
+.heroFeatures{display:flex;gap:36px;margin-top:58px;color:#b9afa5;font-size:8px;letter-spacing:2.2px;line-height:1.8}.heroFeatures span:first-letter{color:var(--gold)}
+.scriptTag{right:7%;top:31%;font:italic 48px/1 Georgia,serif;color:#eee2d3;text-shadow:0 5px 25px #000;opacity:.92}
+.visualTag{right:5.2%;bottom:35px;color:#e4d8cb;letter-spacing:4px}
+.marquee{display:block;border-block:1px solid var(--line);padding:12px 0;background:#080807;color:#756c62;font-size:8px;letter-spacing:4px}
+.marquee span{animation:m 34s linear infinite}
+.section{max-width:1500px;padding:105px 5.2vw;margin:auto}
+.head{margin-bottom:38px;align-items:end}.eyebrow{font-size:8px;letter-spacing:4px;color:var(--gold)}.head h2{font:400 58px/.95 Georgia,serif;letter-spacing:-1px;margin-top:13px}
+.viewAll{font-size:8px;letter-spacing:3px;color:#c9beb3;border-bottom:1px solid #6f6254;padding-bottom:9px}
+.productGrid{grid-template-columns:repeat(4,1fr);gap:18px}
+.productCard{border:0;background:transparent;position:relative}.productCard:after{content:"";position:absolute;inset:0;border:1px solid transparent;transition:.4s;pointer-events:none}.productCard:hover:after{border-color:var(--line2)}
+.productCard img{height:420px;filter:saturate(.72) contrast(1.03);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s}.productCard:hover img{transform:scale(1.035);filter:saturate(.9) contrast(1.03)}
+.productInfo{padding:17px 3px 20px}.productName{font:400 19px Georgia,serif}.productMeta{margin-top:9px;color:#aaa097;font-size:11px;letter-spacing:.7px}.productAdd{margin-top:18px;border:1px solid #4b443d;background:transparent;color:#e8dfd6;padding:13px;transition:.3s}.productAdd:hover{background:#eee7dc;color:#111;border-color:#eee7dc}
+.empty{height:210px;border-color:var(--line);background:rgba(255,255,255,.015)}
+.tiles{grid-template-columns:1.2fr .8fr .8fr;gap:12px}.tile{height:520px;border:1px solid var(--line);background:#0b0a09}.tile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 55%);z-index:1}.tile img{opacity:.68;filter:saturate(.62) contrast(1.06);transition:1s}.tile:hover img{opacity:.88;transform:scale(1.045)}.tile small,.tile b{z-index:3}.tile b{font:400 31px Georgia,serif;letter-spacing:-.5px}.tile small{color:#d3c2ad}
+.story{max-width:none;grid-template-columns:1.05fr .95fr;gap:8vw;background:linear-gradient(180deg,transparent,#0b0a09 12%,#0b0a09 88%,transparent);padding-top:125px;padding-bottom:125px}.story img{height:620px;filter:saturate(.72) contrast(1.04)}.story h2{font-size:64px;line-height:.94}.story p{font-size:17px;color:#aaa098}.brandSection{padding-bottom:115px}.brand3d{height:500px}.brand3d .plate{background:radial-gradient(ellipse at center,rgba(178,145,98,.08),transparent 62%);border-color:rgba(183,154,112,.5);box-shadow:0 0 120px rgba(183,154,112,.08),inset 0 0 80px rgba(183,154,112,.05)}
+.brandText{font-size:42px;letter-spacing:11px}
+.newsletter{max-width:none;padding:0 5.2vw 110px;border:0}.newsletterCard{min-height:500px;background:linear-gradient(135deg,#eee8df,#dcd2c5);padding:70px 7%;position:relative;overflow:hidden}.newsletterCard:after{content:"O&O";position:absolute;right:-35px;bottom:-100px;font:300 280px Georgia,serif;color:rgba(80,62,42,.06)}.newsletterTitle{font-size:clamp(65px,8vw,112px);letter-spacing:-4px}.newsletterCard p{font-family:Georgia,serif}.emailRow{max-width:790px}
+.newFooter{max-width:none;margin:0;padding:80px 5.2vw 45px;border-top:1px solid var(--line);background:#070706}.footerBrand strong{font:400 28px Georgia,serif;letter-spacing:3px;color:#eee5db}.footerBrand p,.follow p{color:#77716b}.footerCols b{color:#d6c9ba;font-size:11px;letter-spacing:3px}.footerCols a{font-size:14px;color:#8d867e}.follow h3{font-size:12px;letter-spacing:3px}.followBtns a{border-color:#3b3630;transition:.3s}.followBtns a:hover{border-color:#9d8769;color:#eee}
+.manage{border-color:#51483f;color:#aaa}.copyright{color:#5e5953}
+.drawer{background:rgba(0,0,0,.78);backdrop-filter:blur(10px)}.panel{background:#0c0b0a;border-left:1px solid var(--line2);box-shadow:-30px 0 80px rgba(0,0,0,.4)}
+.form input,.form textarea,.form select{background:#080807;border-color:#39342f}.close{border-color:#4b433a;background:#111;color:#ddd}
+.cartLine,.adminItem{border-color:#332e29}
+@media(max-width:900px){.hero{height:720px;min-height:720px;display:block;padding:0 22px}.hero>div:first-child{padding-top:68px}.heroVisual{width:100%;height:720px}.hero:before{background:linear-gradient(180deg,#070706ed 0%,#0707069e 44%,#0707065a 70%,#070706ec 100%)}.heroFeatures{gap:18px;margin-top:42px}.productGrid{grid-template-columns:repeat(2,1fr)}.tiles{grid-template-columns:1fr 1fr}.story{grid-template-columns:1fr;gap:35px}.story img{height:480px}}
+@media(max-width:560px){.logo{font-size:23px}.navlinks{display:none}.hero h1{font-size:55px}.hero p{font-size:15px}.heroFeatures{font-size:7px;flex-wrap:wrap}.productGrid{grid-template-columns:1fr}.productCard img{height:440px}.tiles{grid-template-columns:1fr}.tile{height:430px}.head h2{font-size:45px}.story h2{font-size:50px}.brandText{font-size:25px;letter-spacing:7px}}
+
+
+/* FRONT-END ONLY — premium Pakistani fashion landing page */
+body{background:#080807;color:#f4eee6}
+.nav{height:82px;background:rgba(8,8,7,.82);border-bottom:1px solid rgba(231,220,206,.12);backdrop-filter:blur(22px)}
+.logo{font-size:28px;letter-spacing:6px}
+.navlinks{font-size:9px;letter-spacing:3px}
+.actions .pill{border-color:rgba(210,181,140,.35)}
+.frontOnlyHero{height:calc(100vh - 116px);min-height:690px;max-height:900px;width:100%;max-width:none;padding:0 5.4vw;display:grid;grid-template-columns:48% 52%;position:relative;overflow:hidden;background:#080807}
+.frontOnlyHero:before{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(90deg,#080807 0%,#080807 27%,rgba(8,8,7,.87) 43%,rgba(8,8,7,.18) 68%,transparent 100%);pointer-events:none}
+.frontOnlyHero:after{content:"";position:absolute;inset:auto 0 0 0;height:170px;background:linear-gradient(transparent,#080807);z-index:4;pointer-events:none}
+.heroCopy{position:relative;z-index:8;align-self:center;padding-bottom:35px}
+.heroKicker{font-size:9px;letter-spacing:5px;color:#b99a70;display:flex;align-items:center;gap:10px}
+.heroKicker span{display:inline-block;width:24px;height:1px;background:#b99a70}
+.frontOnlyHero h1{font:400 clamp(64px,7vw,112px)/.82 Georgia,serif;letter-spacing:-4px;margin:28px 0 30px;text-shadow:0 10px 35px #000}
+.frontOnlyHero h1 i{font-weight:400;color:#c5a57b}
+.frontOnlyHero p{font:17px/1.65 Georgia,serif;color:#bdb4aa;max-width:455px;margin:0}
+.heroBtns{display:flex;gap:12px;margin-top:35px}
+.luxBtn{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 19px;border:1px solid #5d5144;font-size:8px;letter-spacing:2.8px;min-width:190px;transition:.35s}
+.luxBtn.primary{background:#eee7dd;color:#13110f;border-color:#eee7dd}
+.luxBtn.primary b{font-size:15px;font-weight:400}
+.luxBtn:hover{transform:translateY(-3px);border-color:#c6a77e}
+.heroMicro{margin-top:58px;color:#777068;font-size:7px;letter-spacing:2px;display:flex;gap:12px;align-items:center}
+.heroMicro span{color:#b99a70}
+.heroFrame{position:absolute;right:0;top:0;width:66%;height:100%;z-index:2;overflow:hidden}
+.heroFrame img{width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.08) saturate(.62);transform:scale(1.02);animation:luxImage 13s ease-in-out infinite alternate}
+@keyframes luxImage{to{transform:scale(1.075) translate3d(-9px,-4px,0)}}
+.heroFrame:before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,#080807 0%,rgba(8,8,7,.45) 23%,transparent 55%),linear-gradient(0deg,rgba(8,8,7,.5),transparent 35%,rgba(8,8,7,.18))}
+.heroGlow{position:absolute;z-index:3;width:300px;height:300px;right:16%;top:16%;border-radius:50%;background:rgba(191,153,100,.10);filter:blur(70px);pointer-events:none}
+.frameEdge{position:absolute;inset:32px 36px 32px auto;width:44%;border:1px solid rgba(225,205,177,.22);z-index:5;pointer-events:none}
+.verticalLabel{position:absolute;right:22px;top:50%;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);z-index:7;color:#c6b7a5;font-size:7px;letter-spacing:3px}
+.heroStamp{position:absolute;right:6%;bottom:19%;z-index:7;border:1px solid rgba(223,204,177,.45);width:78px;height:78px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:22px Georgia,serif;color:#e8dccd;letter-spacing:2px;background:rgba(8,8,7,.16);backdrop-filter:blur(5px)}
+.heroStamp small{font:6px Arial,sans-serif;letter-spacing:2px;margin-top:4px}
+.scrollCue{position:absolute;left:5.4vw;bottom:28px;z-index:10;color:#7b7269;font-size:7px;letter-spacing:3px}.scrollCue span{color:#b99a70;font-size:15px;margin-left:10px}
+.frontIntro{max-width:1400px;margin:auto;padding:105px 5.4vw 110px;display:grid;grid-template-columns:1fr 2fr 1.2fr;gap:45px;align-items:end;border-bottom:1px solid rgba(231,220,206,.1)}
+.introNumber{font:400 13px Georgia,serif;color:#8e7860;letter-spacing:5px}
+.frontIntro .eyebrow{font-size:8px;letter-spacing:4px;color:#b99a70}
+.frontIntro h2{font:400 clamp(42px,5vw,72px)/.93 Georgia,serif;letter-spacing:-2px;margin:16px 0 0}
+.frontIntro h2 em{color:#b99a70}
+.frontIntro>p{font:15px/1.8 Georgia,serif;color:#89827b;max-width:390px;margin:0}
+.section{padding-top:100px}
+.head h2{font-size:56px}
+.productCard{transition:transform .5s}.productCard:hover{transform:translateY(-5px)}
+.productCard img{height:410px}
+@media(max-width:900px){
+.frontOnlyHero{height:760px;min-height:760px;display:block;padding:0 24px}
+.heroCopy{padding-top:95px}.heroFrame{width:100%;height:760px}.frontOnlyHero:before{background:linear-gradient(180deg,#080807f2 0%,#080807bd 35%,rgba(8,8,7,.25) 68%,#080807 100%)}
+.frontOnlyHero h1{font-size:64px}.heroMicro{margin-top:38px}.frontIntro{grid-template-columns:1fr;gap:25px;padding:75px 24px}.introNumber{display:none}
+}
+@media(max-width:560px){
+.frontOnlyHero h1{font-size:53px;letter-spacing:-2px}.frontOnlyHero p{font-size:15px}.heroBtns{flex-direction:column;align-items:flex-start}.heroMicro{font-size:6px;flex-wrap:wrap}.frameEdge{right:20px;width:55%}.heroStamp{right:9%;bottom:20%}
+}
+
 </style>
 </head>
 <body>
 <div class="ship">COMPLIMENTARY CANADIAN SHIPPING ON ORDERS OVER CA$150</div>
 <nav class="nav">
 <div class="logo">OPAL &amp; OAK</div>
-<div class="navlinks"><a href="#collection">Shop</a><a href="#new">New Arrivals</a><a href="#story">Our Story</a><a href="#social">Contact</a></div>
+<div class="navlinks"><a href="#collection">Shop</a><a href="#new">The New Edit</a><a href="#story">Our Story</a><a href="#social">Contact</a></div>
 <div class="actions"><div class="pill">CA / EN</div><div class="pill">Bag <span id="bag">0</span></div><div class="pill">☰</div></div>
 </nav>
 
-<section class="hero">
-<div>
-<div class="kicker">WOMEN'S COLLECTION · CANADA</div>
-<h1>Modern dressing.<br>Quietly iconic.</h1>
-<p>Elevated women's outfits and considered accessories, curated for a refined everyday wardrobe.</p>
-<div class="buttons"><a class="btn main" href="#collection">Explore Collection</a><a class="btn" href="#story">Discover Our Story</a></div>
-</div>
-<div class="heroVisual" id="heroVisual">
-<div class="visualCard" id="visualCard">
-<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=92" alt="Women's fashion editorial">
-<div class="visualTag">CANADIAN EDIT<br><b>WOMEN</b></div>
-</div>
-</div>
+<section class="hero frontOnlyHero">
+  <div class="heroCopy">
+    <div class="heroKicker"><span></span> THE PAKISTANI EDIT <span></span></div>
+    <h1>Eastern<br><i>Elegance.</i><br>Reimagined.</h1>
+    <p>Luxury Pakistani wear for the woman who carries tradition with a modern point of view.</p>
+    <div class="heroBtns">
+      <a class="luxBtn primary" href="#new">SHOP THE EDIT <b>↗</b></a>
+      <a class="luxBtn ghost" href="#collection">EXPLORE COLLECTION</a>
+    </div>
+    <div class="heroMicro"><span>01</span> HANDCRAFTED DETAILS <span>·</span> CANADA DELIVERY <span>·</span> CAD PRICING</div>
+  </div>
+  <div class="heroFrame">
+    <div class="heroGlow"></div>
+    <img src="pakistani-hero.jpg" alt="Pakistani luxury fashion">
+    <div class="frameEdge"></div>
+    <div class="verticalLabel">OPAL &amp; OAK&nbsp;&nbsp; / &nbsp;&nbsp;PAKISTANI LUXURY</div>
+    <div class="heroStamp">OO<br><small>EST. 2026</small></div>
+  </div>
+  <div class="scrollCue">SCROLL <span>↓</span></div>
 </section>
 
-<div class="marquee"><span>OPAL &amp; OAK · WOMEN · OUTFITS · ACCESSORIES · CANADA · TIMELESS LUXURY · OPAL &amp; OAK · WOMEN · OUTFITS · ACCESSORIES · CANADA · TIMELESS LUXURY · </span></div>
+<section class="frontIntro">
+  <div class="introNumber">O / O</div>
+  <div>
+    <div class="eyebrow">A MODERN HOUSE OF PAKISTANI WEAR</div>
+    <h2>Not just an outfit.<br><em>A signature.</em></h2>
+  </div>
+  <p>Embroidered silhouettes, graceful fabrics and considered details — selected for celebrations, evenings and every moment worth dressing for.</p>
+</section>
+
+
+<div class="marquee"><span>OPAL &amp; OAK · PAKISTANI COUTURE · SHALWAR KAMEEZ · 3-PIECE SUITS · LAWN · FORMAL · CANADA · OPAL &amp; OAK · PAKISTANI COUTURE · SHALWAR KAMEEZ · 3-PIECE SUITS · LAWN · FORMAL · CANADA · </span></div>
 
 <section class="section" id="new">
-<div class="head"><div><div class="eyebrow">YOUR REAL CATALOGUE</div><h2>New Arrivals</h2></div></div>
+<div class="head"><div><div class="eyebrow">THE PAKISTANI EDIT</div><h2>Fresh Pakistani Arrivals</h2></div></div>
 <div id="productGrid" class="productGrid"><div class="empty">Loading your real products…</div></div>
 </section>
 
 <section class="section" id="collection">
-<div class="head"><div><div class="eyebrow">SHOP BY EDIT</div><h2>Women</h2></div></div>
+<div class="head"><div><div class="eyebrow">SHOP BY EDIT</div><h2>Pakistani Wear</h2></div></div>
 <div class="tiles">
-<a class="tile" href="#new"><img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=88"><small>01 / OUTFITS</small><b>Women's Outfits</b></a>
-<a class="tile" href="#new"><img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=900&q=88"><small>02 / NEW</small><b>New Arrivals</b></a>
-<a class="tile" href="#new"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=88"><small>03 / DETAILS</small><b>Women's Accessories</b></a>
+<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31874438/pexels-photo-31874438.jpeg?cs=srgb&dl=pexels-dhanno-31874438.jpg&fm=jpg"><small>01 / 3-PIECE</small><b>3-Piece Suits</b></a>
+<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31874451/pexels-photo-31874451.jpeg?cs=srgb&dl=pexels-dhanno-31874451.jpg&fm=jpg"><small>02 / LAWN &amp; PRET</small><b>Lawn &amp; Pret</b></a>
+<a class="tile" href="#new"><img src="https://images.pexels.com/photos/31874429/pexels-photo-31874429.jpeg?cs=srgb&dl=pexels-dhanno-31874429.jpg&fm=jpg"><small>03 / FORMAL</small><b>Formal &amp; Festive</b></a>
 </div>
 </section>
 
 <section class="section story" id="story">
 <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1100&q=90" alt="Opal & Oak women's fashion">
-<div><div class="eyebrow">OUR STORY</div><h2>Quietly distinctive.</h2><p>Opal &amp; Oak brings together modern silhouettes, tactile details and an understated Canadian point of view. Every collection is designed to feel considered, wearable and distinctly yours.</p><a class="btn" href="#social">Read Our Story</a></div>
+<div><div class="eyebrow">OUR CRAFT</div><h2>Rooted in tradition.</h2><p>Opal &amp; Oak brings Pakistani craftsmanship to a modern Canadian wardrobe — from embroidered shalwar kameez and lawn to occasion-ready formal wear. Every piece is selected for its detail, comfort and timeless character.</p><a class="btn" href="#social">Discover The Collection</a></div>
 </section>
 
 <section class="brandSection">
-<div class="eyebrow" style="text-align:center">THE HOUSE OF OPAL &amp; OAK</div>
+<div class="eyebrow" style="text-align:center">THE HOUSE OF OPAL &amp; OAK · PAKISTANI EDIT</div>
 <div class="brand3d" id="brand3d"><div class="plate" id="plate"><div class="brandText">OPAL &amp; OAK</div></div></div>
 </section>
 
@@ -100,7 +277,7 @@ footer{border-top:1px solid #292622;padding:40px 5vw;color:#716b64;font-size:9px
     <p>Modern essentials with a premium point of view.</p>
   </div>
   <div class="footerCols">
-    <div><b>SHOP</b><a href="#collection">Collection</a><a href="#new">New Arrivals</a></div>
+    <div><b>SHOP</b><a href="#collection">Collection</a><a href="#new">The New Edit</a></div>
     <div><b>HELP</b><a href="#">Contact</a><a href="#">Shipping</a><a href="#">Returns</a></div>
   </div>
   <div class="follow">
@@ -131,8 +308,14 @@ tilt(document.getElementById('brand3d'),document.getElementById('plate'));
 <div class="drawer" id="cartDrawer"><div class="panel">
 <button class="close" onclick="closePanel('cartDrawer')">CLOSE</button><h2>Your Bag</h2><div id="cartLines"></div><div class="cartTotal" id="cartTotal">CA$0.00</div>
 <div class="checkout"><div class="eyebrow">CHECKOUT</div><div class="form">
-<label>Name<input id="cName" required></label><label>Email<input id="cEmail" type="email" required></label><label>Phone<input id="cPhone"></label><label>Address<textarea id="cAddress" rows="3" required></textarea></label><label>City<input id="cCity"></label><label>Province<input id="cProvince"></label><label>Postal Code<input id="cPostal"></label>
-<button class="btn main" onclick="placeOrder()">Place Order — COD</button></div><div id="orderMsg" class="notice"></div></div>
+<label>Name<input id="cName" required></label><label>Email<input id="cEmail" type="email" required></label><label>Phone<input id="cPhone"></label><label>Address<textarea id="cAddress" rows="3" required></textarea></label><label>City<input id="cCity"></label><label>Province<input id="cProvince"></label><label>Postal Code<input id="cPostal"></label><label>Payment Method
+   <select id="paymentMethod">
+     <option value="COD">Cash on Delivery</option>
+     <option value="ONLINE">Credit / Debit Card — Online Payment</option>
+   </select>
+ </label>
+
+<button class="btn main" onclick="placeOrder()">Continue to Payment</button></div><div id="orderMsg" class="notice"></div></div>
 </div></div>
 
 <div class="drawer" id="adminDrawer"><div class="panel">
@@ -144,7 +327,7 @@ tilt(document.getElementById('brand3d'),document.getElementById('plate'));
 <div id="adminArea" style="display:none">
 <div class="eyebrow">ADD PRODUCT</div>
 <div class="form">
-<label>Name<input id="pName"></label><label>Price (CAD)<input id="pPrice" type="number" step="0.01"></label><label>Category<select id="pCategory"><option>Women</option><option>Women's Outfits</option><option>Women's Accessories</option></select></label><label>Image URL<input id="pImage"></label><label>Description<textarea id="pDesc" rows="3"></textarea></label><label>Sizes<input id="pSizes" placeholder="XS,S,M,L"></label><label>Colors<input id="pColors" placeholder="Black,Beige"></label><label>Stock<input id="pStock" type="number" value="0"></label>
+<label>Name<input id="pName"></label><label>Price (CAD)<input id="pPrice" type="number" step="0.01"></label><label>Category<select id="pCategory"><option>Pakistani Dresses</option><option>3-Piece Suits</option><option>2-Piece Suits</option><option>Kurtis</option><option>Formal / Party Wear</option><option>Lawn / Summer</option><option>Pakistani Wear's Accessories</option></select></label><label>Image URL<input id="pImage"></label><label>Description<textarea id="pDesc" rows="3"></textarea></label><label>Sizes<input id="pSizes" placeholder="XS,S,M,L"></label><label>Colors<input id="pColors" placeholder="Black,Beige"></label><label>Stock<input id="pStock" type="number" value="0"></label>
 <button class="btn main" onclick="addProduct()">Add Product</button></div>
 <hr style="border-color:#292622;margin:30px 0"><div class="eyebrow">ORDERS</div><div id="orders"></div>
 </div></div></div>
@@ -171,7 +354,7 @@ async function loadProducts(){
  if(error){grid.innerHTML='<div class="empty">Could not load products. Check Supabase table permissions.</div>';return}
  products=(data||[]).filter(p=>p.active!==false && p.is_active!==false);
  if(!products.length){grid.innerHTML='<div class="empty">No real products yet.<br><br>Add your first product from Manage Store.</div>';return}
- grid.innerHTML=products.map(p=>`<article class="productCard"><img src="${esc(p.image_url||p.image||"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Women")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
+ grid.innerHTML=products.map(p=>`<article class="productCard"><img src="${esc(p.image_url||p.image||"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Pakistani Dresses")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
 }
 async function adminLogin(){
  const {error}=await sb.auth.signInWithPassword({email:aEmail.value,password:aPassword.value});
@@ -195,7 +378,7 @@ async function setStatus(id,status){await sb.from("orders").update({status}).eq(
 async function placeOrder(){
  if(!cart.length){orderMsg.textContent="Your bag is empty.";return}
  const total=cart.reduce((a,x)=>a+x.price*x.qty,0);
- const order={customer_name:cName.value.trim(),email:cEmail.value.trim(),phone:cPhone.value.trim(),address:cAddress.value.trim(),city:cCity.value.trim(),province:cProvince.value.trim(),postal_code:cPostal.value.trim(),country:"Canada",total,currency:"CAD",payment_method:"COD",status:"Pending"};
+ const order={customer_name:cName.value.trim(),email:cEmail.value.trim(),phone:cPhone.value.trim(),address:cAddress.value.trim(),city:cCity.value.trim(),province:cProvince.value.trim(),postal_code:cPostal.value.trim(),country:"Canada",total,currency:"CAD",payment_method:document.getElementById("paymentMethod").value,status:"Pending"};
  if(!order.customer_name||!order.email||!order.address){orderMsg.textContent="Please complete name, email and address.";return}
  const {data,error}=await sb.from("orders").insert(order).select().single();
  if(error){orderMsg.textContent=error.message;return}
