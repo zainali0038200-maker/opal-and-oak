@@ -65,7 +65,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SUPABASE_URL='https://yxfiifavyklplkqiudcr.supabase.co';
-const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl4ZmlpZmF2a2xwaXF1ZGNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3MTQwNjMsImV4cCI6MjEwNTI5MDA2M30.ELYZQt-nyyQLOZEomO781HMEpFYORKuXqLgs5yxM_lY';
+const SUPABASE_ANON_KEY='sb_publishable_zf_n_HU1R2HAZx4iTBIdOw__67qDHTJ';
 const supa=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
 const reveals=document.querySelectorAll('.reveal'); const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12}); reveals.forEach(x=>io.observe(x));
 const steps=document.querySelectorAll('.step'),processImg=document.getElementById('processImg'),mediaLabel=document.querySelector('.media-label'); steps.forEach((s,i)=>s.addEventListener('click',()=>{steps.forEach(x=>x.classList.remove('active'));s.classList.add('active');processImg.classList.add('swap');setTimeout(()=>{processImg.src=s.dataset.img;processImg.classList.remove('swap');mediaLabel.textContent='Signature edit · 0'+(i+1)},180)}));
