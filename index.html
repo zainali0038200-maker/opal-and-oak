@@ -64,7 +64,7 @@ footer{border-top:1px solid #292622;padding:40px 5vw;color:#716b64;font-size:9px
 
 <section class="section" id="new">
 <div class="head"><div><div class="eyebrow">YOUR REAL CATALOGUE</div><h2>New Arrivals</h2></div></div>
-<div class="empty">No demo products.<br><br>Your real products will appear here when you add them.</div>
+<div id="productGrid" class="productGrid"><div class="empty">Loading your real products…</div></div>
 </section>
 
 <section class="section" id="collection">
@@ -118,6 +118,96 @@ area.addEventListener('pointerleave',()=>card.style.transform='rotateY(0) rotate
 }
 tilt(document.getElementById('heroVisual'),document.getElementById('visualCard'));
 tilt(document.getElementById('brand3d'),document.getElementById('plate'));
+</script>
+
+<style>
+.productGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.productCard{border:1px solid #292622;background:#0d0c0b;overflow:hidden}.productCard img{width:100%;height:330px;object-fit:cover;display:block}.productInfo{padding:18px}.productName{font:400 22px Georgia,serif}.productMeta{display:flex;justify-content:space-between;margin-top:10px;color:#aaa;font-size:12px}.productAdd{width:100%;margin-top:16px;background:#eee7dc;color:#111;border:0;padding:13px;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.drawer{position:fixed;inset:0;background:#0009;z-index:100;display:none}.drawer.open{display:block}.panel{position:absolute;right:0;top:0;height:100%;width:min(520px,100%);background:#10100f;border-left:1px solid #39342e;padding:28px;overflow:auto}.panel h2{font-size:34px}.close{float:right;border:1px solid #403a34;background:none;color:#eee;padding:9px 13px}.form{display:grid;gap:11px}.form input,.form textarea,.form select{width:100%;background:#080808;color:#eee;border:1px solid #3b3631;padding:13px}.form label{font-size:9px;letter-spacing:2px;color:#aaa;text-transform:uppercase}.adminItem{border:1px solid #302c28;padding:15px;margin:10px 0}.adminItem button{margin:8px 5px 0 0;padding:8px 12px;background:#eee;color:#111;border:0}.notice{font-size:11px;color:#bcae9a;line-height:1.5;margin:12px 0}.cartLine{display:grid;grid-template-columns:1fr auto;gap:12px;border-bottom:1px solid #292622;padding:15px 0}.cartTotal{font:24px Georgia,serif;margin:22px 0}.checkout{margin-top:20px}
+@media(max-width:850px){.productGrid{grid-template-columns:repeat(2,1fr)}.productCard img{height:250px}}
+@media(max-width:520px){.productGrid{grid-template-columns:1fr}.productCard img{height:390px}}
+</style>
+
+<div class="drawer" id="cartDrawer"><div class="panel">
+<button class="close" onclick="closePanel('cartDrawer')">CLOSE</button><h2>Your Bag</h2><div id="cartLines"></div><div class="cartTotal" id="cartTotal">CA$0.00</div>
+<div class="checkout"><div class="eyebrow">CHECKOUT</div><div class="form">
+<label>Name<input id="cName" required></label><label>Email<input id="cEmail" type="email" required></label><label>Phone<input id="cPhone"></label><label>Address<textarea id="cAddress" rows="3" required></textarea></label><label>City<input id="cCity"></label><label>Province<input id="cProvince"></label><label>Postal Code<input id="cPostal"></label>
+<button class="btn main" onclick="placeOrder()">Place Order — COD</button></div><div id="orderMsg" class="notice"></div></div>
+</div></div>
+
+<div class="drawer" id="adminDrawer"><div class="panel">
+<button class="close" onclick="closePanel('adminDrawer')">CLOSE</button><h2>Manage Store</h2>
+<div id="adminAuth">
+<div class="notice">Sign in with the Supabase account you use for store management.</div>
+<div class="form"><label>Email<input id="aEmail" type="email"></label><label>Password<input id="aPassword" type="password"></label><button class="btn main" onclick="adminLogin()">Sign In</button><button class="btn" onclick="adminSignup()">Create Admin Account</button></div>
+<div id="authMsg" class="notice"></div></div>
+<div id="adminArea" style="display:none">
+<div class="eyebrow">ADD PRODUCT</div>
+<div class="form">
+<label>Name<input id="pName"></label><label>Price (CAD)<input id="pPrice" type="number" step="0.01"></label><label>Category<select id="pCategory"><option>Women</option><option>Women's Outfits</option><option>Women's Accessories</option></select></label><label>Image URL<input id="pImage"></label><label>Description<textarea id="pDesc" rows="3"></textarea></label><label>Sizes<input id="pSizes" placeholder="XS,S,M,L"></label><label>Colors<input id="pColors" placeholder="Black,Beige"></label><label>Stock<input id="pStock" type="number" value="0"></label>
+<button class="btn main" onclick="addProduct()">Add Product</button></div>
+<hr style="border-color:#292622;margin:30px 0"><div class="eyebrow">ORDERS</div><div id="orders"></div>
+</div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL="https://yxfiifavyklplkqiudcr.supabase.co";
+const SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl4ZmlpZmF2eWtscGxrcWl1ZGNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3MTQwNjMsImV4cCI6MjEwNTI5MDA2M30.ELYZQt-nyyQLOZEomO781HMEpFYORKuXqLgs5yxM_lY";
+const sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+let products=[],cart=JSON.parse(localStorage.getItem("opal_cart")||"[]");
+
+function money(v){return "CA$"+Number(v||0).toFixed(2)}
+function openPanel(id){document.getElementById(id).classList.add("open")}
+function closePanel(id){document.getElementById(id).classList.remove("open")}
+function saveCart(){localStorage.setItem("opal_cart",JSON.stringify(cart));document.getElementById("bag").textContent=cart.reduce((a,x)=>a+x.qty,0)}
+function addToCart(id){let p=products.find(x=>x.id===id);if(!p)return;let x=cart.find(x=>x.id===id);if(x)x.qty++;else cart.push({id:p.id,name:p.name,price:p.price,image_url:p.image_url||"",qty:1});saveCart();renderCart();openPanel("cartDrawer")}
+function renderCart(){let el=document.getElementById("cartLines");if(!cart.length){el.innerHTML='<div class="notice">Your bag is empty.</div>';document.getElementById("cartTotal").textContent=money(0);return}el.innerHTML=cart.map((x,i)=>`<div class="cartLine"><div><b>${esc(x.name)}</b><br><small>${money(x.price)} × ${x.qty}</small></div><button class="btn" onclick="removeCart(${i})">Remove</button></div>`).join("");document.getElementById("cartTotal").textContent=money(cart.reduce((a,x)=>a+x.price*x.qty,0))}
+function removeCart(i){cart.splice(i,1);saveCart();renderCart()}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+
+async function loadProducts(){
+ const {data,error}=await sb.from("products").select("*").order("created_at",{ascending:false});
+ const grid=document.getElementById("productGrid");
+ if(error){grid.innerHTML='<div class="empty">Could not load products. Check Supabase table permissions.</div>';return}
+ products=(data||[]).filter(p=>p.active!==false && p.is_active!==false);
+ if(!products.length){grid.innerHTML='<div class="empty">No real products yet.<br><br>Add your first product from Manage Store.</div>';return}
+ grid.innerHTML=products.map(p=>`<article class="productCard"><img src="${esc(p.image_url||p.image||"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Women")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
+}
+async function adminLogin(){
+ const {error}=await sb.auth.signInWithPassword({email:aEmail.value,password:aPassword.value});
+ authMsg.textContent=error?error.message:"Signed in."; if(!error)showAdmin()
+}
+async function adminSignup(){
+ const {error}=await sb.auth.signUp({email:aEmail.value,password:aPassword.value});
+ authMsg.textContent=error?error.message:"Account created. If email confirmation is enabled, confirm your email, then sign in."
+}
+async function showAdmin(){adminAuth.style.display="none";adminArea.style.display="block";loadOrders()}
+async function addProduct(){
+ const payload={name:pName.value.trim(),price:Number(pPrice.value||0),category:pCategory.value,image_url:pImage.value.trim(),description:pDesc.value.trim(),sizes:pSizes.value.split(",").map(x=>x.trim()).filter(Boolean),colors:pColors.value.split(",").map(x=>x.trim()).filter(Boolean),stock:Number(pStock.value||0),is_active:true};
+ const {error}=await sb.from("products").insert(payload);
+ authMsg.textContent=error?error.message:"Product added."; if(!error){document.querySelectorAll("#adminArea input,#adminArea textarea").forEach(x=>x.value="");pStock.value=0;loadProducts()}
+}
+async function loadOrders(){
+ const {data,error}=await sb.from("orders").select("*").order("created_at",{ascending:false});
+ orders.innerHTML=error?'<div class="notice">'+esc(error.message)+'</div>':(data||[]).map(o=>`<div class="adminItem"><b>${esc(o.customer_name)}</b><br>${esc(o.email)}<br>${esc(o.address)}, ${esc(o.city)}<br><b>${money(o.total)}</b> · ${esc(o.status)}<br><button onclick="setStatus('${o.id}','Confirmed')">Confirm</button><button onclick="setStatus('${o.id}','Shipped')">Shipped</button><button onclick="setStatus('${o.id}','Delivered')">Delivered</button></div>`).join("")||'<div class="notice">No orders yet.</div>'
+}
+async function setStatus(id,status){await sb.from("orders").update({status}).eq("id",id);loadOrders()}
+async function placeOrder(){
+ if(!cart.length){orderMsg.textContent="Your bag is empty.";return}
+ const total=cart.reduce((a,x)=>a+x.price*x.qty,0);
+ const order={customer_name:cName.value.trim(),email:cEmail.value.trim(),phone:cPhone.value.trim(),address:cAddress.value.trim(),city:cCity.value.trim(),province:cProvince.value.trim(),postal_code:cPostal.value.trim(),country:"Canada",total,currency:"CAD",payment_method:"COD",status:"Pending"};
+ if(!order.customer_name||!order.email||!order.address){orderMsg.textContent="Please complete name, email and address.";return}
+ const {data,error}=await sb.from("orders").insert(order).select().single();
+ if(error){orderMsg.textContent=error.message;return}
+ const items=cart.map(x=>({order_id:data.id,product_id:x.id,product_name:x.name,price:x.price,quantity:x.qty}));
+ const r=await sb.from("order_items").insert(items);
+ if(r.error){orderMsg.textContent=r.error.message;return}
+ cart=[];saveCart();renderCart();orderMsg.textContent="Order received. Thank you — we will contact you to confirm delivery."
+}
+document.querySelector(".actions .pill:nth-child(2)")?.addEventListener("click",()=>{renderCart();openPanel("cartDrawer")});
+document.querySelector(".manage")?.addEventListener("click",e=>{e.preventDefault();openPanel("adminDrawer")});
+sb.auth.getSession().then(({data})=>{if(data.session)showAdmin()});
+saveCart();renderCart();loadProducts();
 </script>
 </body>
 </html>
