@@ -57,7 +57,7 @@ body{background:#090908;color:#f5efe7}
 .hero p{font:17px/1.5 Arial,sans-serif;color:#ded6cd;max-width:420px}
 .buttons{margin-top:28px}.btn.main{background:transparent;color:#f4eee6;border-color:#d8cfc5;min-width:215px}
 .heroFeatures{display:flex;gap:34px;margin-top:53px;font-size:8px;letter-spacing:2px;line-height:1.7;color:#e5ddd4}
-.scriptTag{position:absolute;right:5%;top:31%;z-index:8;color:#f5ede3;font:italic 43px/1.03 Georgia,serif;text-align:center;transform:rotate(-7deg);text-shadow:0 3px 18px #000}
+.scriptTag{display:none!important}
 .scriptTag small{display:block;font-size:17px;margin-top:12px}
 .visualTag{position:absolute;right:5%;bottom:26px;z-index:8;background:none;color:#eee5dc;padding:0;text-align:center;letter-spacing:4px;line-height:1.8}
 .marquee{display:none}
@@ -109,7 +109,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .hero:before{content:"";position:absolute;inset:0;z-index:4;background:
  linear-gradient(90deg,#070706 0%,rgba(7,7,6,.97) 17%,rgba(7,7,6,.78) 40%,rgba(7,7,6,.10) 73%,transparent 100%),
  linear-gradient(0deg,rgba(7,7,6,.52),transparent 30%,rgba(7,7,6,.12))}
-.hero:after{content:"";position:absolute;left:5.2vw;bottom:34px;width:130px;height:1px;background:var(--gold);z-index:9;box-shadow:210px 0 0 var(--line2)}
+.hero:after{display:none!important}
 .heroVisual{position:absolute;right:0;top:0;width:70%;height:100%;z-index:2}
 .visualCard{width:100%;height:100%;border-radius:0;box-shadow:none;overflow:hidden}
 .visualCard img{width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.04) saturate(.76) sepia(.05);animation:coutureZoom 14s ease-in-out infinite alternate}
@@ -120,7 +120,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .hero p{font:400 17px/1.65 Georgia,serif;color:#c5bdb4;max-width:470px;margin:0}
 .buttons{margin-top:36px}.btn{border-color:#756958;padding:16px 23px;transition:.35s;background:rgba(255,255,255,.015)}.btn.main{background:#eee7dc;color:#111;border-color:#eee7dc;box-shadow:0 10px 35px rgba(0,0,0,.22)}.btn:hover{transform:translateY(-2px);border-color:#d2b98f}
 .heroFeatures{display:flex;gap:36px;margin-top:58px;color:#b9afa5;font-size:8px;letter-spacing:2.2px;line-height:1.8}.heroFeatures span:first-letter{color:var(--gold)}
-.scriptTag{right:7%;top:31%;font:italic 48px/1 Georgia,serif;color:#eee2d3;text-shadow:0 5px 25px #000;opacity:.92}
+.scriptTag{display:none!important}
 .visualTag{right:5.2%;bottom:35px;color:#e4d8cb;letter-spacing:4px}
 .marquee{display:block;border-block:1px solid var(--line);padding:12px 0;background:#080807;color:#756c62;font-size:8px;letter-spacing:4px}
 .marquee span{animation:m 34s linear infinite}
@@ -205,6 +205,45 @@ body{background:#080807;color:#f4eee6}
 @media(max-width:900px){.fallbackArrivals{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.fallbackArrivals{grid-template-columns:1fr}.fallbackArrival img{height:440px}}
 </style>
+
+<style id="opal-reference-finish">
+/* Reference-matched luxury finish — structure and Supabase kept intact */
+.referenceCollection{max-width:1500px;margin:0 auto;padding:10px 5.1vw 92px;display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:12px}
+.refTile{height:300px;position:relative;overflow:hidden;border:1px solid rgba(238,228,215,.14);background:#0d0c0b}
+.refTile img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.62) contrast(1.06);transform:scale(1.01);transition:transform .8s ease,filter .6s}
+.refTile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 62%)}
+.refTile:hover img{transform:scale(1.055);filter:saturate(.78) contrast(1.04)}
+.refTile>div{position:absolute;left:25px;right:20px;bottom:21px;z-index:2}
+.refTile small{font-size:8px;letter-spacing:3px;color:#b99a70}
+.refTile h3{font:400 31px Georgia,serif;margin:8px 0 10px;letter-spacing:.5px}
+.refTile a{font-size:10px;letter-spacing:1.8px;color:#e6ddd3}
+.referenceBanner{max-width:1500px;margin:0 auto 105px 0;position:relative;height:340px;overflow:hidden}
+.referenceBanner img{width:100%;height:100%;object-fit:cover;filter:saturate(.68) contrast(1.05)}
+.referenceBanner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080807 0%,rgba(8,8,7,.68) 30%,transparent 68%),linear-gradient(0deg,rgba(8,8,7,.35),transparent)}
+.bannerCopy{position:absolute;z-index:3;left:7%;top:50%;transform:translateY(-50%);max-width:440px}
+.bannerCopy h2{font:400 48px/.95 Georgia,serif;margin:12px 0 18px}
+.bannerCopy p{font:15px/1.6 Georgia,serif;color:#b8afa5;margin:0 0 25px}
+.bannerCopy .btn{min-width:210px}
+.frontOnlyHero:after{display:none!important}
+.heroKicker span{display:none!important}
+.fallbackArrival{transition:transform .5s ease,border-color .4s}
+.fallbackArrival:hover{transform:translateY(-5px);border-color:rgba(183,154,112,.45)}
+.fallbackArrival img{filter:saturate(.72) contrast(1.03);transition:transform .7s ease}
+.fallbackArrival:hover img{transform:scale(1.035)}
+@media(max-width:900px){
+ .referenceCollection{grid-template-columns:1fr 1fr;padding:10px 24px 70px}
+ .refTile:first-child{grid-column:1/-1}
+ .referenceBanner{margin-bottom:70px;height:300px}
+}
+@media(max-width:560px){
+ .referenceCollection{grid-template-columns:1fr;padding:10px 20px 60px}
+ .refTile:first-child{grid-column:auto}
+ .referenceBanner{height:360px}
+ .bannerCopy{left:28px;right:25px}
+ .bannerCopy h2{font-size:42px}
+}
+</style>
+
 </head>
 <body>
 <div class="ship">COMPLIMENTARY CANADIAN SHIPPING ON ORDERS OVER CA$150</div>
@@ -216,18 +255,18 @@ body{background:#080807;color:#f4eee6}
 
 <section class="hero frontOnlyHero">
   <div class="heroCopy">
-    <div class="heroKicker">THE HIJAB &amp; SCARF EDIT</div>
-    <h1>Timeless<br><i>Modesty.</i><br>Reimagined.</h1>
-    <p>Luxury hijabs, scarves and refined accessories for the woman who carries modesty with a modern point of view.</p>
+    <div class="heroKicker">MODERN MODESTY</div>
+    <h1>TIMELESS<br>HIJABS &amp; SCARVES</h1>
+    <p>Elegant hijabs, scarves and refined accessories for every modern wrap.</p>
     <div class="heroBtns">
-      <a class="luxBtn primary" href="#new">SHOP HIJABS & SCARVES <b>↗</b></a>
+      <a class="luxBtn primary" href="#new">SHOP NOW <b>↗</b></a>
       <a class="luxBtn ghost" href="#collection">EXPLORE THE COLLECTION</a>
     </div>
-    <div class="heroMicro"><span>01</span> HANDCRAFTED DETAILS <span>·</span> CANADA DELIVERY <span>·</span> CAD PRICING</div>
+    <div class="heroMicro">“Modesty is a form of self-love.”</div>
   </div>
   <div class="heroFrame">
     <div class="heroGlow"></div>
-    <img src="https://assets.lummi.ai/assets/QmYtk4WgvpHVbENyJUqyfRdEgXEr3MvtB5ynJYUuJNA6Dg?auto=format&w=1500" alt="Luxury flowing hijab editorial">
+    <img src="hero.jpg" alt="Luxury taupe hijab editorial">
     <div class="frameEdge"></div>
     <div class="verticalLabel">OPAL &amp; OAK&nbsp;&nbsp; / &nbsp;&nbsp;HIJAB · SCARF · ACCESSORIES</div>
     
@@ -244,27 +283,43 @@ body{background:#080807;color:#f4eee6}
   <p>Silky textures, graceful drapes and considered details — curated for everyday modesty, celebrations and every moment worth dressing for.</p>
 </section>
 
+<section class="referenceCollection" id="collection">
+  <div class="refTile"><img src="cat_hijabs.jpg" alt="Hijabs"><div><small>01</small><h3>HIJABS</h3><a href="#new">Shop Now →</a></div></div>
+  <div class="refTile"><img src="cat_scarves.jpg" alt="Scarves"><div><small>02</small><h3>SCARVES</h3><a href="#new">Shop Now →</a></div></div>
+  <div class="refTile"><img src="cat_accessories.jpg" alt="Accessories"><div><small>03</small><h3>ACCESSORIES</h3><a href="#new">Shop Now →</a></div></div>
+</section>
 
 <div class="marquee"><span>OPAL &amp; OAK · PREMIUM HIJABS · SILK SCARVES · CHIFFON · SATIN · ACCESSORIES · CANADA · OPAL &amp; OAK · PREMIUM HIJABS · SILK SCARVES · CHIFFON · SATIN · ACCESSORIES · CANADA · </span></div>
 
 <section class="section" id="new">
-<div class="head"><div><h2>New Hijab, Scarf & Accessories Arrivals</h2></div></div>
+<div class="head"><div><h2>New Arrivals</h2></div></div>
 <div id="productGrid" class="productGrid"><div class="empty">Loading your real products…</div></div>
 <div id="fallbackArrivals" class="fallbackArrivals" style="display:none">
-  <article class="fallbackArrival"><img src="https://thehijabcompany.pk/cdn/shop/files/LightFrenchBeige_4_1792x.png?v=1782739879" alt="Beige luxury hijab"><div class="faInfo"><div class="faName">French Beige Signature Hijab</div><div class="faMeta">PREMIUM HIJAB · CA$39</div></div></article>
-  <article class="fallbackArrival"><img src="https://www.yasminjay.com.au/cdn/shop/files/Photo5-3-2024_102407am_1200x1200.jpg?v=1710374704" alt="Mocha silk hijab"><div class="faInfo"><div class="faName">Mocha Silk Hijab</div><div class="faMeta">SILK HIJAB · CA$49</div></div></article>
-  <article class="fallbackArrival"><img src="https://worood.co/cdn/shop/files/Ros_Insignia_Worood.jpg?v=1766314155&width=1600" alt="Rose silk scarf"><div class="faInfo"><div class="faName">Rosé Silk Scarf</div><div class="faMeta">SILK SCARF · CA$49</div></div></article>
-  <article class="fallbackArrival"><img src="https://www.yasminjay.com.au/cdn/shop/files/Photo5-3-2024_125619pm_1.jpg?v=1710376079" alt="Sky silk hijab"><div class="faInfo"><div class="faName">Sky Silk Hijab</div><div class="faMeta">SILK HIJAB · CA$49</div></div></article>
+  <article class="fallbackArrival"><img src="accessories_banner.jpg" alt="Beige luxury hijab"><div class="faInfo"><div class="faName">French Beige Signature Hijab</div><div class="faMeta">PREMIUM HIJAB · CA$39</div></div></article>
+  <article class="fallbackArrival"><img src="hero.jpg" alt="Mocha silk hijab"><div class="faInfo"><div class="faName">Mocha Silk Hijab</div><div class="faMeta">SILK HIJAB · CA$49</div></div></article>
+  <article class="fallbackArrival"><img src="new_1.jpg" alt="Rose silk scarf"><div class="faInfo"><div class="faName">Rosé Silk Scarf</div><div class="faMeta">SILK SCARF · CA$49</div></div></article>
+  <article class="fallbackArrival"><img src="new_2.jpg" alt="Sky silk hijab"><div class="faInfo"><div class="faName">Sky Silk Hijab</div><div class="faMeta">SILK HIJAB · CA$49</div></div></article>
 </div>
 </section>
 
+
+<section class="referenceBanner">
+  <img src="new_3.jpg" alt="Opal & Oak accessories">
+  <div class="bannerCopy">
+    <div class="eyebrow">THE FINISHING TOUCH</div>
+    <h2>Accessories<br>for Every Detail</h2>
+    <p>Elevate your hijab look with our curated collection.</p>
+    <a class="btn" href="#new">EXPLORE ACCESSORIES</a>
+  </div>
+</section>
+
 <section class="section story" id="story">
-<img src="https://assets.lummi.ai/assets/QmYtk4WgvpHVbENyJUqyfRdEgXEr3MvtB5ynJYUuJNA6Dg?auto=format&w=1500" alt="Opal & Oak women's fashion">
-<div><div class="eyebrow">OUR CRAFT</div><h2>Made for modern modest elegance.</h2><p>Opal &amp; Oak brings Pakistani craftsmanship to a modern Canadian wardrobe — from embroidered shalwar kameez and lawn to occasion-ready formal wear. Every piece is selected for its detail, comfort and timeless character.</p><a class="btn" href="#social">Discover The Edit</a></div>
+<img src="new_4.jpg" alt="Opal & Oak hijab editorial">
+<div><div class="eyebrow">OUR CRAFT</div><h2>Made for modern modest elegance.</h2><p>Opal &amp; Oak curates premium hijabs, scarves and refined accessories for a modern Canadian wardrobe. Every piece is selected for its texture, drape, comfort and timeless character.</p><a class="btn" href="#social">Discover The Edit</a></div>
 </section>
 
 <section class="brandSection">
-<div class="eyebrow" style="text-align:center">THE HOUSE OF OPAL &amp; OAK · PAKISTANI EDIT</div>
+<div class="eyebrow" style="text-align:center">THE HOUSE OF OPAL &amp; OAK · MODEST LUXURY EDIT</div>
 <div class="brand3d" id="brand3d"><div class="plate" id="plate"><div class="brandText">OPAL &amp; OAK</div></div></div>
 </section>
 
@@ -298,7 +353,7 @@ function tilt(area,card){
 area.addEventListener('pointermove',e=>{let r=area.getBoundingClientRect(),x=e.clientX/r.width-.5,y=e.clientY/r.height-.5;card.style.transform=`rotateY(${x*10}deg) rotateX(${-y*8}deg) translateZ(20px)`});
 area.addEventListener('pointerleave',()=>card.style.transform='rotateY(0) rotateX(0) translateZ(0)');
 }
-tilt(document.getElementById('heroVisual'),document.getElementById('visualCard'));
+const heroArea=document.getElementById('heroFrame'); const heroCard=document.getElementById('visualCard'); if(heroArea&&heroCard) tilt(heroArea,heroCard);
 tilt(document.getElementById('brand3d'),document.getElementById('plate'));
 </script>
 
@@ -326,7 +381,11 @@ tilt(document.getElementById('brand3d'),document.getElementById('plate'));
 <div id="adminArea" style="display:none">
 <div class="eyebrow">ADD PRODUCT</div>
 <div class="form">
-<label>Name<input id="pName"></label><label>Price (CAD)<input id="pPrice" type="number" step="0.01"></label><label>Category<select id="pCategory"><option>Hijabs</option><option>Hijabs</option><option>Chiffon Scarves</option><option>Jersey Hijabs</option><option>Silk Scarves</option><option>Satin Scarves</option><option>Hijabs · Scarves · Accessories's Accessories</option></select></label><label>Image URL<input id="pImage"></label><label>Description<textarea id="pDesc" rows="3"></textarea></label><label>Sizes<input id="pSizes" placeholder="XS,S,M,L"></label><label>Colors<input id="pColors" placeholder="Black,Beige"></label><label>Stock<input id="pStock" type="number" value="0"></label>
+<label>Name<input id="pName"></label><label>Price (CAD)<input id="pPrice" type="number" step="0.01"></label><label>Category<select id="pCategory">
+<option>Hijabs</option><option>Silk Scarves</option><option>Chiffon Scarves</option>
+<option>Jersey Hijabs</option><option>Satin Scarves</option><option>Handbags</option>
+<option>Jewelry</option><option>Hijab Accessories</option>
+</select></label><label>Image URL<input id="pImage"></label><label>Description<textarea id="pDesc" rows="3"></textarea></label><label>Sizes<input id="pSizes" placeholder="XS,S,M,L"></label><label>Colors<input id="pColors" placeholder="Black,Beige"></label><label>Stock<input id="pStock" type="number" value="0"></label>
 <button class="btn main" onclick="addProduct()">Add Product</button></div>
 <hr style="border-color:#292622;margin:30px 0"><div class="eyebrow">ORDERS</div><div id="orders"></div>
 </div></div></div>
@@ -353,8 +412,7 @@ async function loadProducts(){
  if(error){grid.innerHTML='<div class="empty">Could not load products. Check Supabase table permissions.</div>';return}
  products=(data||[]).filter(p=>p.active!==false && p.is_active!==false);
  if(!products.length){grid.innerHTML='';const f=document.getElementById("fallbackArrivals");if(f)f.style.display="grid";return}
- grid.innerHTML=products.map(p=>`<article class="productCard"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=88"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Hijabs")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
-}
+ grid.innerHTML=products.map(p=>`<article class="productCard"><img src="${esc(p.image_url||"new_1.jpg")}" alt="${esc(p.name||"Hijab")}"><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Hijabs")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
 async function adminLogin(){
  const {error}=await sb.auth.signInWithPassword({email:aEmail.value,password:aPassword.value});
  authMsg.textContent=error?error.message:"Signed in."; if(!error)showAdmin()
