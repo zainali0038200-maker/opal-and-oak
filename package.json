@@ -1,0 +1,5 @@
+{
+  "name": "opal-oak-store",
+  "private": true,
+  "dependencies": { "stripe": "^18.5.0" }
+}
