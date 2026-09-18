@@ -197,6 +197,17 @@ body{background:#080807;color:#f4eee6}
 }
 
 </style>
+
+<style id="new-arrivals-fallback-css">
+.fallbackArrivals{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
+.fallbackArrival{background:#0d0c0b;border:1px solid rgba(238,228,215,.16);overflow:hidden}
+.fallbackArrival img{width:100%;height:410px;object-fit:cover;display:block;filter:saturate(.78) contrast(1.03)}
+.fallbackArrival .faInfo{padding:16px 17px 20px}
+.fallbackArrival .faName{font:400 19px Georgia,serif}
+.fallbackArrival .faMeta{margin-top:8px;color:#aaa097;font-size:11px;letter-spacing:.7px}
+@media(max-width:900px){.fallbackArrivals{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.fallbackArrivals{grid-template-columns:1fr}.fallbackArrival img{height:440px}}
+</style>
 </head>
 <body>
 <div class="ship">COMPLIMENTARY CANADIAN SHIPPING ON ORDERS OVER CA$150</div>
@@ -219,7 +230,7 @@ body{background:#080807;color:#f4eee6}
   </div>
   <div class="heroFrame">
     <div class="heroGlow"></div>
-    <img src="https://www.nameerabyfarooq.com/cdn/shop/products/TraditionalBluePishwasLehenga_1800x1800.jpg?v=1671277986" alt="Pakistani luxury fashion">
+    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1600&q=85" alt="Pakistani luxury fashion">
     <div class="frameEdge"></div>
     <div class="verticalLabel">OPAL &amp; OAK&nbsp;&nbsp; / &nbsp;&nbsp;PAKISTANI LUXURY</div>
     <div class="heroStamp">OO<br><small>EST. 2026</small></div>
@@ -242,19 +253,38 @@ body{background:#080807;color:#f4eee6}
 <section class="section" id="new">
 <div class="head"><div><div class="eyebrow">THE PAKISTANI EDIT</div><h2>Fresh Pakistani Arrivals</h2></div></div>
 <div id="productGrid" class="productGrid"><div class="empty">Loading your real products…</div></div>
+<div id="fallbackArrivals" class="fallbackArrivals" style="display:none">
+  <article class="fallbackArrival">
+    <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85" alt="Embroidered Pakistani 3-piece suit">
+    <div class="faInfo"><div class="faName">Ivory Embroidered 3-Piece</div><div class="faMeta">3-PIECE SUIT · CA$189</div></div>
+  </article>
+  <article class="fallbackArrival">
+    <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=85" alt="Pakistani lawn outfit">
+    <div class="faInfo"><div class="faName">Midnight Lawn Ensemble</div><div class="faMeta">LAWN &amp; PRET · CA$149</div></div>
+  </article>
+  <article class="fallbackArrival">
+    <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85" alt="Pakistani formal outfit">
+    <div class="faInfo"><div class="faName">Noor Formal Edit</div><div class="faMeta">FORMAL / FESTIVE · CA$229</div></div>
+  </article>
+  <article class="fallbackArrival">
+    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=85" alt="Pakistani evening outfit">
+    <div class="faInfo"><div class="faName">Rose Evening Kurta</div><div class="faMeta">KURTI · CA$119</div></div>
+  </article>
+</div>
+
 </section>
 
 <section class="section" id="collection">
 <div class="head"><div><div class="eyebrow">SHOP BY EDIT</div><h2>Pakistani Wear</h2></div></div>
 <div class="tiles">
-<a class="tile" href="#new"><img src="https://www.designerdhaage.com/cdn/shop/files/BinTayyabPakistaniLawnSuitBIT02_1.jpg?v=1755892304"><small>01 / 3-PIECE</small><b>3-Piece Suits</b></a>
-<a class="tile" href="#new"><img src="https://houseofayeza.co.uk/cdn/shop/files/s241-005b-3cp.jpg?v=1730718631&width=600"><small>02 / LAWN &amp; PRET</small><b>Lawn &amp; Pret</b></a>
-<a class="tile" href="#new"><img src="https://uycollection.com/cdn/shop/files/1_ccb80978-243f-4a50-93ec-d89edee418a6.jpg?v=1714133067"><small>03 / FORMAL</small><b>Formal &amp; Festive</b></a>
+<a class="tile" href="#new"><img src="https://images.unsplash.com/photo-1585488435747-aed5c9f2a9b9?auto=format&fit=crop&w=1200&q=85"><small>01 / 3-PIECE</small><b>3-Piece Suits</b></a>
+<a class="tile" href="#new"><img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=85"><small>02 / LAWN &amp; PRET</small><b>Lawn &amp; Pret</b></a>
+<a class="tile" href="#new"><img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=1200&q=85"><small>03 / FORMAL</small><b>Formal &amp; Festive</b></a>
 </div>
 </section>
 
 <section class="section story" id="story">
-<img src="https://saraclothes.com/cdn/shop/products/LF21-08-01_900x_eadd91bb-0c92-45cc-b508-c85c3a7b0955.jpg?v=1639766185" alt="Opal & Oak women's fashion">
+<img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1100&q=90" alt="Opal & Oak women's fashion">
 <div><div class="eyebrow">OUR CRAFT</div><h2>Rooted in tradition.</h2><p>Opal &amp; Oak brings Pakistani craftsmanship to a modern Canadian wardrobe — from embroidered shalwar kameez and lawn to occasion-ready formal wear. Every piece is selected for its detail, comfort and timeless character.</p><a class="btn" href="#social">Discover The Collection</a></div>
 </section>
 
@@ -347,7 +377,7 @@ async function loadProducts(){
  const grid=document.getElementById("productGrid");
  if(error){grid.innerHTML='<div class="empty">Could not load products. Check Supabase table permissions.</div>';return}
  products=(data||[]).filter(p=>p.active!==false && p.is_active!==false);
- if(!products.length){grid.innerHTML='<div class="empty">No real products yet.<br><br>Add your first product from Manage Store.</div>';return}
+ if(!products.length){grid.innerHTML='';const f=document.getElementById("fallbackArrivals");if(f)f.style.display="grid";return}
  grid.innerHTML=products.map(p=>`<article class="productCard"><img src="${esc(p.image_url||p.image||"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80")}" alt=""><div class="productInfo"><div class="productName">${esc(p.name)}</div><div class="productMeta"><span>${money(p.price)}</span><span>${esc(p.category||"Pakistani Dresses")}</span></div><button class="productAdd" onclick="addToCart('${p.id}')">Add to Bag</button></div></article>`).join("")
 }
 async function adminLogin(){
